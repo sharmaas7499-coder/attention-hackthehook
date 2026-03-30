@@ -10,8 +10,15 @@
 /* ============================================================
    RESET & ROOT
 ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; overflow-x: hidden; }
-
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    max-width: 100%; 
+}
+body {
+    overflow-x: hidden; /* This stops the side-scrolling */
+}
 :root {
   --ink: #0b0b10;
   --ink2: #161620;
