@@ -2125,7 +2125,7 @@ Format: Plain text, no markdown headers, use the numbered list only for the sugg
 
     document.getElementById('aiInsightText').innerHTML = '<div class="ai-loading"><div class="spinner"></div> Claude is analysing your brain scan...</div>';
 
-    const insight = await callClaudeAPI(systemPrompt, userPrompt);
+    const insight = await callGeminiAPI(systemPrompt, userPrompt);
     document.getElementById('aiInsightText').textContent = insight;
 
     // Step 3: Generate priority action cards
@@ -2204,7 +2204,7 @@ Score change: ${delta > 0 ? '+' : ''}${delta} points
 
 Give a 2-sentence verdict on which version performs better neurologically and the key reason why.`;
 
-    const comparison = await callClaudeAPI(systemPrompt, userPrompt);
+    const comparison = await callGeminiAPI(systemPrompt, userPrompt);
     document.getElementById('cmpInsightText').textContent = comparison;
   } catch (err) {
     document.getElementById('cmpInsightText').textContent = `Comparison error: ${err.message}`;
@@ -2409,7 +2409,7 @@ Return ONLY a JSON array with exactly 4 objects. Each object must have these exa
 
 Return ONLY the JSON array, no preamble or markdown.`;
 
-    const raw = await callClaudeAPI(systemPrompt, userPrompt);
+    const raw = await callGeminiAPI(systemPrompt, userPrompt);
     const clean = raw.replace(/```json|```/g, '').trim();
     const nudges = JSON.parse(clean);
     populateNudges(nudges);
