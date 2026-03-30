@@ -10,15 +10,8 @@
 /* ============================================================
    RESET & ROOT
 ============================================================ */
-*, *::before, *::after { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-    max-width: 100%; 
-}
-body {
-    overflow-x: hidden; /* This stops the side-scrolling */
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
   --ink: #0b0b10;
   --ink2: #161620;
@@ -46,7 +39,6 @@ body {
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -243,8 +235,7 @@ p { font-size: 15px; line-height: 1.65; color: var(--muted); }
    LANDING PAGE SCREEN
 ============================================================ */
 #screen-landing {
-  margin-left: calc(-1 * var(--sidebar-w));
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background: var(--ink);
   color: white;
@@ -1931,8 +1922,8 @@ p { font-size: 15px; line-height: 1.65; color: var(--muted); }
 // ============================================================
 // CONFIG — Replace with your actual TRIBEv2 endpoint
 // ============================================================
-const TRIBE_API_URL = 'YOUR_TRIBEV2_ENDPOINT_HERE'; // e.g. 'https://api.yourdomain.com/tribev2/analyze'
-const USE_MOCK_TRIBE = true; // Set to false when your endpoint is ready
+const TRIBE_API_URL = 'https://probablyanurag-attention-brain-api.hf.space'; // e.g. 'https://api.yourdomain.com/tribev2/analyze'
+const USE_MOCK_TRIBE = false; // Set to false when your endpoint is ready
 
 // ============================================================
 // NAVIGATION
